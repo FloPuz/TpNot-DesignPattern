@@ -1,6 +1,12 @@
 package iterator.monarraylist;
 
-public class MonArrayList {
+import iterator.monarraylist.interfaces.Iterable;
+import iterator.monarraylist.interfaces.Iterator;
+import iterator.tuple.Pair;
+
+import java.util.NoSuchElementException;
+
+public class MonArrayList implements Iterable {
 
     private String[] array = new String[10];
     private int index = 0;
@@ -32,5 +38,11 @@ public class MonArrayList {
 
     public int size() {
         return index;
+    }
+
+
+    @Override
+    public Iterator getIterator() {
+        return new MonArrayListIterator(this);
     }
 }

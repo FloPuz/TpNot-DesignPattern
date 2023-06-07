@@ -1,5 +1,7 @@
 package iterator.monarraylist;
 
+import iterator.monarraylist.interfaces.Iterator;
+
 public class Main {
     public static void main(String[] args) {
         MonArrayList monArrayList = new MonArrayList();
@@ -21,5 +23,11 @@ public class Main {
         System.out.println("Element à l'index 9 : " + monArrayList.get(9));
         System.out.println("Element à l'index 10 : " + monArrayList.get(10));
         System.out.println("Size à la fin " + monArrayList.size());
+
+        Iterator iterator = monArrayList.getIterator();
+        while (iterator.hasNext()){
+            //Iterator.next() return String
+            System.out.println(iterator.next());
+        }
     }
 }
