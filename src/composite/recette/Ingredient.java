@@ -1,6 +1,8 @@
 package composite.recette;
 
-public class Ingredient {
+import composite.recette.interfaces.Component;
+
+public class Ingredient implements Component {
     private double prix;
     private String unite;
 
@@ -9,7 +11,17 @@ public class Ingredient {
         this.unite = unite;
     }
 
-    public double getPrix() {
+    @Deprecated
+    public double getPrixOld() {
         return prix;
+    }
+
+    /****
+     *
+     * @return prix
+     */
+    @Override
+    public double getPrix() {
+        return this.prix;
     }
 }
